@@ -1,9 +1,9 @@
 exports.commands = [
-	"create",
-	"voice",
-	"delete",
-	"servers",
-	"topic"
+	// "create",
+	// "voice",
+	// "delete",
+	// "servers",
+	// "topic"
 ]
 
 exports.create = {

@@ -1,6 +1,6 @@
 exports.commands = [
 	"setUsername",
-	"log",
+	// "log",
 	"uptime"
 ]
 

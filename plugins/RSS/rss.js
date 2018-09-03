@@ -1,6 +1,6 @@
 exports.commands = [
-	"rss",
-	"reddit" //uses the RSS code to read subreddits
+	// "rss",
+	// "reddit" //uses the RSS code to read subreddits
 ]
 
 try{

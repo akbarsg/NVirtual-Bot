@@ -58,7 +58,7 @@ exports.play = {
 		}
 
 		// Get the video information.
-		msg.channel.sendMessage( wrap('Searching...')).then(response => {
+		msg.channel.sendMessage( wrap('Klo musiknya ga muncul, berarti aku blum mau muterin >_<')).then(response => {
 			// If the suffix doesn't start with 'http', assume it's a search.
 			if (!suffix.toLowerCase().startsWith('http')) {
 				suffix = 'gvsearch1:' + suffix;
@@ -80,9 +80,9 @@ exports.play = {
 						executeQueue(client, msg, queue);
 						resp.delete(1000);
 					}
-				}).catch(() => {});
+				}).catch((e) => {console.log(e);});
 			});
-		}).catch(() => {});
+		}).catch((e) => {console.log(e)});
 	}
 }
 

@@ -2,7 +2,7 @@ var rp = require("request-promise");
 var htmlToText = require("html-to-text");
 
 exports.commands = [
-	"4chan"
+	// "4chan"
 ];
 
 exports['4chan'] = {

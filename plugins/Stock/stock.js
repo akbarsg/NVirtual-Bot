@@ -1,5 +1,5 @@
 exports.commands = [
-	"stock"
+	// "stock"
 ]
 
 exports.stock = {

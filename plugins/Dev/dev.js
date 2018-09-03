@@ -1,8 +1,8 @@
 exports.commands = [
-	"pullanddeploy",
-	"version",
-	"myid",
-	"userid"
+	// "pullanddeploy",
+	// "version",
+	// "myid",
+	// "userid"
 ]
 
 //a collection of commands primarily useful for developers

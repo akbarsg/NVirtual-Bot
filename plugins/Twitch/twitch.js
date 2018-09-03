@@ -3,8 +3,8 @@ var AuthDetails = require("../../auth.json");
 var Discord = require("discord.js");
 
 exports.commands = [
-    "twitch_user",
-    "twitch"
+    // "twitch_user",
+    // "twitch"
 ]
 
 exports.twitch_user = {

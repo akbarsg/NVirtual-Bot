@@ -1,7 +1,7 @@
 exports.commands = [
-	"mixer",
-	"chuckNorris",
-	"watchtogether"
+	// "mixer",
+	// "chuckNorris",
+	// "watchtogether"
 ]
 
 //a collection of simple self contained commands with no dependencies beyond request

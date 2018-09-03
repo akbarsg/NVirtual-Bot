@@ -1,5 +1,5 @@
 exports.commands = [
-	"leet"
+	// "leet"
 ]
 
 var leet = require("leet");

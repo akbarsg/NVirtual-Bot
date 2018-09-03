@@ -1,5 +1,5 @@
 exports.commands = [
-	"meme"
+	// "meme"
 ]
 
 var AuthDetails = require("../../auth.json");

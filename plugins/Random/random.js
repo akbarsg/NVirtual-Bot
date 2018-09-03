@@ -1,8 +1,8 @@
 exports.commands = [
-    "date_fact",
-    "year_fact",
-    "joke",
-    "math_fact"
+    // "date_fact",
+    // "year_fact",
+    // "joke",
+    // "math_fact"
 ]
 
 exports.math_fact = {

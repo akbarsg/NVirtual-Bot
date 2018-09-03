@@ -1,9 +1,9 @@
 var fs = require('fs')
 
 exports.commands = [
-	"memes",
-    "addmeme",
-    "imgmeme"
+	// "memes",
+    // "addmeme",
+    // "imgmeme"
 ]
 
 var MemeChannels = {};
