@@ -6,7 +6,7 @@ var AuthDetails = require("../../auth.json");
 function YoutubePlugin () {
 	this.RickrollUrl = 'http://www.youtube.com/watch?v=oHg5SJYRHA0';
 	this.youtube = new youtube_node();
-	this.youtube.setKey(AuthDetails.youtube_api_key);
+	this.youtube.setKey(process.env.YOUTUBE_API);
 	this.youtube.addParam('type', 'video');
 };
 
