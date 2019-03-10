@@ -90,7 +90,7 @@ exports['reactivate'] = {
         // var searchRegex = new RegExp(searchString, 'i');
         // pull the data of the pilotID in question
         // var pilotID = pilotID.replace(/\D/g,'');
-        var restString = process.env.DISCORD_API ;
+        var restString = process.env.PILOTS_API ;
         var data;
         rp(restString)
         .then(function(response) {
@@ -125,23 +125,25 @@ exports['reactivate'] = {
                                 var nickname = 'NVX' + pilotID + ' | ' + data2.firstname + ' ' + data2.lastname;
                                 
                                 if(data2.retired == 0){
-                                    msg.channel.send('Akun <@' + msg.author.id + '> sudah diaktifkan lagi. PIREPnya ditunggu sampai 24 jam ke depan, ya  (＾＾)ｂ')
+                                    msg.channel.send('Akun <@' + msg.author.id + '> sudah diaktifkan lagi. PIREPnya ditunggu sampai 24 jam ke depan, ya  (＾＾)ｂ');
                                     
                                     let embed = new Discord.RichEmbed()
                                     .setAuthor(nickname, msg.author.avatarURL)
                                     .setColor('#FF6600')
                                     .setThumbnail("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png")
                                     .addField('Status', 'Active')
-                                    .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");                   
-                                    
+                                    .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");   
+                                                    
+                                    console.log("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png");
+
                                     msg.channel.send({embed : embed});
                                     
                                 } else {
-                                    msg.channel.send('Akun <@' + msg.author.id + '> maaf, kayaknya ga bisa saya aktivasi. Coba tanya ke mas-mas staf ya ╥﹏╥')
+                                    msg.channel.send('Akun <@' + msg.author.id + '> maaf, kayaknya ga bisa saya aktivasi. Coba tanya ke mas-mas staf ya ╥﹏╥');
                                 }
                                 
                             } else {
-                                msg.channel.send('<@' + msg.author.id + '> maaf, ada error ga tau kenapa. Coba tanya ke mas-mas staf ya ╥﹏╥')
+                                msg.channel.send('<@' + msg.author.id + '> maaf, ada error ga tau kenapa. Coba tanya ke mas-mas staf ya ╥﹏╥');
                             }
                             
                             
@@ -151,7 +153,7 @@ exports['reactivate'] = {
                         });
                         
                     } else {
-                        msg.channel.send('<@' + msg.author.id + '> maaf, kayaknya username Discord gak cocok sama profil NVirtual-nya. Coba verifikasi akun dulu pakai perintah !verify sama NVirtual Pilot ID nya (＾＾)ｂ. Misalnya: !verify NVX002')
+                        msg.channel.send('<@' + msg.author.id + '> maaf, kayaknya username Discord gak cocok sama profil NVirtual-nya. Coba verifikasi akun dulu pakai perintah !verify sama NVirtual Pilot ID nya (＾＾)ｂ. Misalnya: !verify NVX002');
                     }
                     
                 } 
