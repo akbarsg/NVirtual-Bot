@@ -107,7 +107,11 @@ exports['reactivate'] = {
                 console.log(msg.author.username);
                 
                 console.log(data.length);
-                console.log(data[3]);
+                
+                console.log(data[0]);
+                console.log(data[0]['discord']);
+                
+                console.log(data[0].discord);
 
                 for(var i = 0; i < data.length; i++) {
                     var obj = data[i];
