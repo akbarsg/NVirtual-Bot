@@ -234,7 +234,7 @@ commands = {
 	// 	}
 	// }
     "ping": {
-        description: "responds pong, useful for checking if bot is alive",
+        description: "Ngecek apa saya lagi tidur apa nggak",
         process: function(bot, msg, suffix) {
             msg.channel.send("Nyoba nge-ping...") // Placeholder for pinging ... 
 			.then((msg2) => { // Resolve promise
