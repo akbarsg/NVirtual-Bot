@@ -1,5 +1,4 @@
 var rp = require("request-promise");
-var htmlToText = require("html-to-text");
 var Discord = require("discord.js");
 
 exports.commands = [

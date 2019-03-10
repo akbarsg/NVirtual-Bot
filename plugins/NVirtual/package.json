@@ -1,0 +1,7 @@
+{
+    "main": "nvirtual.js",
+    "dependencies": {
+      "request-promise": "^4.2.1"
+    }
+  }
+  
