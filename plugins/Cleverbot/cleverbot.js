@@ -10,7 +10,7 @@ exports.talk = {
     description: "Let's chat with me!",
 
     process: function(bot, msg, suffix) {
-        
+        talkbot.setNick("Envi");
         talkbot.create(function (err, session) {
             talkbot.ask(suffix, function (err, response) {
                 console.log(response); 

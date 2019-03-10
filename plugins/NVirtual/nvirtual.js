@@ -43,7 +43,8 @@ exports['verify'] = {
                             let embed = new Discord.RichEmbed()
                             .setAuthor(nickname, msg.author.avatarURL)
                             .setColor('#FF6600')
-                            .setThumbnail("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png")
+                            .setDescription("Profil Akun NVirtual")
+                            .setThumbnail("http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png")
                             .addField('Rank', data.rank)
                             .addField('Flight Hours', data.totalhours + ' hours')
                             .addField('Total Flights', data.totalflights + ' flights')
@@ -102,9 +103,11 @@ exports['reactivate'] = {
             
             if(data) {
                 console.log(msg.author.username);
+                
+                console.log(data.length);
+                
                 for(var i = 0; i < data.length; i++) {
                     var obj = data[i];
-                    console.log(obj);
                     if (obj.discord == msg.author.username) {
                         pilotID = obj.pilotid;
                         break;
@@ -133,7 +136,8 @@ exports['reactivate'] = {
                                     let embed = new Discord.RichEmbed()
                                     .setAuthor(nickname, msg.author.avatarURL)
                                     .setColor('#FF6600')
-                                    .setThumbnail("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png")
+                                    .setDescription("Status Akun NVirtual")
+                                    .setThumbnail("http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png")
                                     .addField('Status', 'Active')
                                     .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");   
 
