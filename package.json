@@ -11,6 +11,7 @@
   },
   "license": "GPL-2.0",
   "dependencies": {
+    "better-cleverbot-io": "^1.0.x",
     "cleverbot-node": "^0.2.8",
     "cleverbot.io": "^1.0.4",
     "d20": "^1.4.1",

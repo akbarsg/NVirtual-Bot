@@ -1,6 +1,7 @@
 {
   "main": "cleverbot.js",
   "dependencies": {
+    "better-cleverbot-io": "^1.0.x",
     "cleverbot.io": "1.0.x"
   }
 }

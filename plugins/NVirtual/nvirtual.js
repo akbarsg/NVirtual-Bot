@@ -39,12 +39,14 @@ exports['verify'] = {
                             var nickname = 'NVX' + pilotID + ' | ' + data.firstname + ' ' + data.lastname;
                             
                             msg.channel.send('Akun <@' + msg.author.id + '> dah diverifikasi ٩(^ᴗ^)۶')
+
+                            let thumbnail = "http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png";
                             
                             let embed = new Discord.RichEmbed()
                             .setAuthor(nickname, msg.author.avatarURL)
                             .setColor('#FF6600')
                             .setDescription("Profil Akun NVirtual")
-                            .setThumbnail("http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png")
+                            .setThumbnail(thumbnail)
                             .addField('Rank', data.rank)
                             .addField('Flight Hours', data.totalhours + ' hours')
                             .addField('Total Flights', data.totalflights + ' flights')
@@ -105,10 +107,11 @@ exports['reactivate'] = {
                 console.log(msg.author.username);
                 
                 console.log(data.length);
-                
+                console.log(data[3]);
+
                 for(var i = 0; i < data.length; i++) {
                     var obj = data[i];
-                    if (obj.discord == msg.author.username) {
+                    if (obj['discord'] == msg.author.username) {
                         pilotID = obj.pilotid;
                         break;
                     } 
@@ -133,15 +136,14 @@ exports['reactivate'] = {
                                 if(data2.retired == 0){
                                     msg.channel.send('Akun <@' + msg.author.id + '> sudah diaktifkan lagi. PIREPnya ditunggu sampai 24 jam ke depan, ya  (＾＾)ｂ');
                                     
+                                    let thumbnail = "http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png";
                                     let embed = new Discord.RichEmbed()
                                     .setAuthor(nickname, msg.author.avatarURL)
                                     .setColor('#FF6600')
                                     .setDescription("Status Akun NVirtual")
-                                    .setThumbnail("http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png")
+                                    .setThumbnail(thumbnail)
                                     .addField('Status', 'Active')
                                     .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");   
-
-                                    console.log("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png");
 
                                     msg.channel.send({embed : embed});
                                     
