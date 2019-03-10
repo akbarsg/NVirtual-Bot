@@ -97,7 +97,7 @@ try{
 	aliases = {};
 }
 
-commands = {	
+commands = {
 	"alias": {
 		usage: "<name> <actual command>",
 		description: "Creates command aliases. Useful for making simple commands on the fly",
@@ -277,7 +277,7 @@ bot.on("ready", function () {
 	bot.user.setPresence({
 		game: {
 			// name: Config.commandPrefix+"help | " + bot.guilds.array().length +" Servers"
-			name: "Prepar8D | " + Config.commandPrefix+"help"
+			name: "XPlane 12 | " + Config.commandPrefix+"help"
 		}
 	}); 
 });
@@ -334,7 +334,7 @@ function checkMessageForCommand(msg, isEdit) {
 				}
 				msg.channel.send(info);
 			} else {
-				msg.author.send("**Available Commands:**").then(function(){
+				msg.author.send("Ini daftar perintah yang baru saya ketahui ＾ω＾").then(function(){
 					var batch = "";
 					var sortedCommands = Object.keys(commands).sort();
 					for(var i in sortedCommands) {
