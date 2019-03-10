@@ -1,6 +1,6 @@
 //None of these commands actually work. Disabling them for now
 exports.commands = [
-	"myid",
+	// "myid",
 	//"perm",
 	//"votekick",
 	// "kick"

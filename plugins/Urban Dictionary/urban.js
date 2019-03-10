@@ -1,7 +1,7 @@
 var urban = require("urban");
 
 exports.commands = [
-	"urban"
+	// "urban"
 ];
 
 exports.urban = {

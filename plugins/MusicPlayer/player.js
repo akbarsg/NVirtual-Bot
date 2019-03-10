@@ -1,13 +1,13 @@
 const YoutubeDL = require('youtube-dl');
 const Request = require('request');
 exports.commands = [
-	"play",
-	"skip",
-	"queue",
-	"dequeue",
-	"pause",
-	"resume",
-	"volume"
+	// "play",
+	// "skip",
+	// "queue",
+	// "dequeue",
+	// "pause",
+	// "resume",
+	// "volume"
 ]
 
 let options = false;

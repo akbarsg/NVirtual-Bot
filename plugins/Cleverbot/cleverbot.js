@@ -1,29 +1,22 @@
 exports.commands = [
-   "talk"
+    "talk"
 ]
 
-var cleverbot = require("cleverbot-node");
-talkbot = new cleverbot;
-cleverbot.prepare(function() {});
+var cleverbot = require("cleverbot.io");
+talkbot = new cleverbot(process.env.CLEVERBOT_API_USER, process.env.CLEVERBOT_API_KEY);
 
 exports.talk = {
     usage: "<message>",
-    description: "Talk directly to the bot",
+    description: "Let's chat with me!",
+
     process: function(bot, msg, suffix) {
-        var conv = suffix.split(" ");
-        talkbot.write(conv, function(response) {
-            msg.channel.send("", {
-                embed: {
-                    color: 0x8698FE,
-                    author: {
-                        name: "Cleverbot",
-                        icon_url: "https://lh5.ggpht.com/DiNbF90a-ecMdyG7c49ARdKdm2mlhLDyNswLcmDm3WM6yDADmMMWtTO1XL96-LCEXIc=w300"
-                    },
-		    timestamp: new Date(),
-                    description: response.message,
-                }
-            }).catch(console.error);
-            msg.react('👌');
-        })
+        
+        talkbot.create(function (err, session) {
+            talkbot.ask(suffix, function (err, response) {
+                console.log(response); 
+                msg.channel.send(response);
+            });
+        });
+        
     }
 }

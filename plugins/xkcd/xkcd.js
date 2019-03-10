@@ -1,6 +1,6 @@
 exports.commands = [
-	"xkcd",
-	"highnoon"
+	// "xkcd",
+	// "highnoon"
 ]
 
 exports.xkcd = {

@@ -1,5 +1,5 @@
 exports.commands = [
-	"wiki"
+	// "wiki"
 ]
 
 var Wiki = require('wikijs');

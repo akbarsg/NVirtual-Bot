@@ -1,5 +1,5 @@
 exports.commands = [
-	"roll"
+	// "roll"
 ]
 
 var d20 = require('d20')

@@ -1,5 +1,5 @@
 exports.commands = [
-	"wolfram"
+	// "wolfram"
 ]
 
 var wa = require("./wolfram_plugin");

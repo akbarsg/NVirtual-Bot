@@ -8,10 +8,10 @@ try {
 }
 
 exports.commands = [
-	"image", //gives top image from google search
-	"rimage", //gives random image from google search
-	"ggif", //gives random gif from google search
-	"youtube"
+	// "image", //gives top image from google search
+	// "rimage", //gives random image from google search
+	// "ggif", //gives random gif from google search
+	// "youtube"
 ];
 
 exports.image = {

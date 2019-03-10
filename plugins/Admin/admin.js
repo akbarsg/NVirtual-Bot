@@ -1,7 +1,7 @@
 exports.commands = [
-	"setUsername",
+	// "setUsername",
 	// "log",
-	"uptime"
+	// "uptime"
 ]
 
 var startTime = Date.now();
