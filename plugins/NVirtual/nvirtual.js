@@ -112,7 +112,7 @@ exports['reactivate'] = {
                 for(var i = 0; i < data.length; i++) {
                     var obj = data[i];
                     if (obj['discord'] == msg.author.username) {
-                        pilotID = obj.pilotid;
+                        pilotID = obj['pilotid'];
                         break;
                     } 
                 }
