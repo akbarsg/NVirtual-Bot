@@ -3,7 +3,8 @@ var Discord = require("discord.js");
 
 exports.commands = [
     "verify",
-    "reactivate"
+    "reactivate",
+    "profile"
 ];
 
 exports['verify'] = {
@@ -46,7 +47,7 @@ exports['verify'] = {
                             .setAuthor(nickname, msg.author.avatarURL)
                             .setColor('#FF6600')
                             .setDescription("Profil Akun NVirtual")
-                            .setThumbnail(msg.author.avatarURL)
+                            .setThumbnail(data.picture)
                             .addField('Rank', data.rank)
                             .addField('Flight Hours', data.totalhours + ' hours')
                             .addField('Total Flights', data.totalflights + ' flights')
@@ -102,6 +103,7 @@ exports['reactivate'] = {
             
             data = JSON.parse(response);
             var pilotID = 0;
+            var initialStatus = 0;
             
             if(data) {
                 console.log(msg.author.username);
@@ -113,6 +115,7 @@ exports['reactivate'] = {
                     var obj = data[i];
                     if (obj['discord'] == msg.author.username) {
                         pilotID = obj.pilotid;
+                        initialStatus = obj.retired;
                         break;
                     } 
                 }
@@ -132,14 +135,18 @@ exports['reactivate'] = {
                             var nickname = 'NVX' + pilotID + ' | ' + data2.firstname + ' ' + data2.lastname;
                             
                             if(data2.retired == 0){
-                                msg.channel.send('Akun <@' + msg.author.id + '> sudah diaktifkan lagi. PIREPnya ditunggu sampai 24 jam ke depan, ya  (＾＾)ｂ');
+                                if (initialStatus == 0) {
+                                    msg.channel.send('Akun <@' + msg.author.id + '> sudah aktif kok. Selamat terbang (＾＾)ｂ');
+                                } else {
+                                    msg.channel.send('Akun <@' + msg.author.id + '> sudah diaktifkan lagi. PIREPnya ditunggu sampai 24 jam ke depan, ya  (＾＾)ｂ');
+                                }
                                 
                                 let thumbnail = "http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png";
                                 let embed = new Discord.RichEmbed()
                                 .setAuthor(nickname, msg.author.avatarURL)
                                 .setColor('#FF6600')
                                 .setDescription("Status Akun NVirtual")
-                                .setThumbnail(msg.author.avatarURL)
+                                .setThumbnail(data.picture)
                                 .addField('Status', 'Active')
                                 .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");   
                                 
@@ -170,5 +177,62 @@ exports['reactivate'] = {
         .catch(function(error) {
             msg.channel.send("Hmm, kayaknya ada yang salah: " + error);
         });
+    }
+}
+
+exports['profile'] = {
+    usage: '<Pilot ID>',
+    description: '**Lihat profil NVirtual**',
+    process: function(bot, msg, suffix) {
+        // variable to hold matches
+        
+        
+        // get pilotID to search
+        var pilotID = suffix.split(' ')[0];
+        // get search string
+        // var searchString = suffix.slice(pilotID.length + 1);
+        // var searchRegex = new RegExp(searchString, 'i');
+        // pull the data of the pilotID in question
+        var pilotID = pilotID.replace(/\D/g,'');
+        var restString = process.env.PILOTS_API + '/' + pilotID ;
+        var data;
+        rp(restString)
+        .then(function(response) {
+            if (suffix) {
+                data = JSON.parse(response);
+                
+                if(pilotID.length == 1) {
+                    pilotID = '00' + pilotID;
+                } else if(pilotID.length == 2){
+                    pilotID = '0' + pilotID;
+                }
+                
+                if(data) {
+                    var nickname = 'NVX' + pilotID + ' | ' + data.firstname + ' ' + data.lastname;
+                    
+                    let embed = new Discord.RichEmbed()
+                    .setAuthor(nickname, msg.author.avatarURL)
+                    .setColor('#FF6600')
+                    .setDescription("Profil Akun NVirtual")
+                    .setThumbnail(data.picture)
+                    .addField('Rank', data.rank)
+                    .addField('Flight Hours', data.totalhours + ' hours')
+                    .addField('Total Flights', data.totalflights + ' flights')
+                    .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");
+                    
+                    msg.channel.send({embed : embed});
+                } else {
+                    msg.channel.send('<@' + msg.member.id + '> maaf, datanya gak ada. Coba cek lagi Pilot ID NVirtual-nya (-д-；)')
+                }
+            } else {
+                msg.channel.send('<@' + msg.member.id + '> maaf, kayaknya salah ketik. Coba ketik !profile sama NVirtual Pilot ID Anda (＾＾)ｂ. Misalnya: !profile NVX002')
+            }
+            
+            
+        })
+        .catch(function(error) {
+            msg.channel.send("Hmm, kayaknya ada yang salah: " + error);
+        });
+        
     }
 }

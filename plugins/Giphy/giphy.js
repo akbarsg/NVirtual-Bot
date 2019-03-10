@@ -1,5 +1,5 @@
 exports.commands = [
-	"giphy"
+	// "giphy"
 ]
 
 var qs = require("querystring");

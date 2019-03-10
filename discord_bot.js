@@ -282,6 +282,15 @@ bot.on("ready", function () {
 	}); 
 });
 
+bot.on("guildMemberAdd", function () {
+	// Send the message to a designated channel on a server:
+	const channel = member.guild.channels.find(ch => ch.name === 'announcement');
+	// Do nothing if the channel wasn't found on this server
+	if (!channel) return;
+	// Send the message, mentioning the member
+	channel.send(`Welcome to **NVirtual** Discord server, ${member} (＾ω＾). You may verify your account with !verify <Pilot ID> command. E.g.: !verify NVX002`);
+});
+
 bot.on("disconnected", function () {
 
 	console.log("Disconnected!");
@@ -334,8 +343,11 @@ function checkMessageForCommand(msg, isEdit) {
 				}
 				msg.channel.send(info);
 			} else {
-				msg.author.send("Terima kasih dah nyoba manggil saya (≧∀≦)");
-				msg.author.send("Ini daftar perintah yang bisa dipakai:").then(function(){
+				msg.channel.send("Cek DM, yaa (*^.^*)");
+				let wew = "__**NVirtual Crew**__ v1.1 (Maret 2019) by <@240261170060197888>\n" + 
+							"Terima kasih dah nyoba manggil saya (≧∀≦)\n" + 
+							"Ini daftar perintah yang bisa dipakai:\n";
+				msg.author.send(wew).then(function(){
 					var batch = "";
 					var sortedCommands = Object.keys(commands).sort();
 					for(var i in sortedCommands) {
