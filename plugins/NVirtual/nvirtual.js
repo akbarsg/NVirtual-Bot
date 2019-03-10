@@ -35,9 +35,8 @@ exports['verify'] = {
                     var nickname = 'NVX' + pilotID + ' | ' + data.firstname + ' ' + data.lastname;
                     
                     msg.member.setNickname(nickname);
-                    msg.member.addRole(process.env.ROLE_ID);
     
-                    msg.channel.send('Akun @' + msg.author.id + ' dah diverifikasi ٩(^ᴗ^)۶')
+                    msg.channel.send('Akun <@' + msg.author.id + '> dah diverifikasi ٩(^ᴗ^)۶')
     
                     let embed = new Discord.RichEmbed()
                         .setAuthor(nickname)
@@ -46,14 +45,17 @@ exports['verify'] = {
                         .addField('Rank', data.rank)
                         .addField('Flight Hours', data.totalhours + ' hours')
                         .addField('Total Flights', data.totalflights + ' flights');
-    
+                    
+                    if (!msg.member.roles.find("name", "Staff NVX")){
+                        msg.member.addRole(process.env.ROLE_ID);
+                    }                    
     
                     msg.channel.send({embed : embed});
                 } else {
-                    msg.channel.send('@' + msg.author.id + ' maaf, kayaknya username Discord gak cocok sama profil NVirtual-nya. Coba dicek lagi (ㄒoㄒ)')
+                    msg.channel.send('<@' + msg.member.id + '> maaf, kayaknya username Discord gak cocok sama profil NVirtual-nya. Coba dicek lagi (ㄒoㄒ)')
                 }
             } else {
-                msg.channel.send('@' + msg.author.id + ' maaf, datanya gak ada. Coba cek lagi Pilot ID NVirtual-nya (-д-；)')
+                msg.channel.send('<@' + msg.member.id + '> maaf, datanya gak ada. Coba cek lagi Pilot ID NVirtual-nya (-д-；)')
             }
             
 
