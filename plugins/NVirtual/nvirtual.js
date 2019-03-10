@@ -23,7 +23,7 @@ exports['verify'] = {
 		rp(restString)
 		.then(function(response) {
             data = JSON.parse(response);
-
+console.log(data);
             if(pilotID.length == 1) {
                 pilotID = '00' + pilotID;
             } else if(pilotID.length == 2){
