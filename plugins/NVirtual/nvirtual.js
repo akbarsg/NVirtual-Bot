@@ -35,7 +35,7 @@ exports['verify'] = {
                     var nickname = 'NVX' + pilotID + ' | ' + data.firstname + ' ' + data.lastname;
                     
                     msg.member.setNickname(nickname);
-                    msg.member.addRole('NVX Member');
+                    msg.member.addRole(process.env.ROLE_ID);
     
                     msg.channel.send('Akun @' + msg.author.id + ' dah diverifikasi ٩(^ᴗ^)۶')
     
