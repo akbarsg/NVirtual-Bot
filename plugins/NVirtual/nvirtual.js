@@ -33,9 +33,7 @@ exports['verify'] = {
             if(data) {
                 if(data.discord == msg.author.username) {
                     var nickname = 'NVX' + pilotID + ' | ' + data.firstname + ' ' + data.lastname;
-                    
-                    msg.member.setNickname(nickname);
-    
+
                     msg.channel.send('Akun <@' + msg.author.id + '> dah diverifikasi ٩(^ᴗ^)۶')
     
                     let embed = new Discord.RichEmbed()
@@ -47,6 +45,7 @@ exports['verify'] = {
                         .addField('Total Flights', data.totalflights + ' flights');
                     
                     if (!msg.member.roles.find("name", "Staff NVX")){
+                        msg.member.setNickname(nickname);
                         msg.member.addRole(process.env.ROLE_ID);
                     }                    
     
