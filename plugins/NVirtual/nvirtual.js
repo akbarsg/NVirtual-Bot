@@ -23,36 +23,39 @@ exports['verify'] = {
 		rp(restString)
 		.then(function(response) {
             data = JSON.parse(response);
-console.log(data);
+
             if(pilotID.length == 1) {
                 pilotID = '00' + pilotID;
             } else if(pilotID.length == 2){
                 pilotID = '0' + pilotID;
             }
-            
-            if(data.discord == msg.author.username) {
-                var nickname = 'NVX' + pilotID + ' | ' + data.firstname + ' ' + data.lastname;
-                
-                msg.member.setNickname(nickname);
-                msg.member.addRole('NVX Member');
 
-                msg.channel.sendMessage('Akun @' + msg.author.id + ' dah diverifikasi ٩(^ᴗ^)۶')
-
-                let embed = new Discord.RichEmbed()
-                    .setAuthor(nickname)
-                    .setColor('#FF6600')
-                    .setThumbnail('https://crew.nvirtual.net/lib/avatars/NVX' + pilotID + '.png')
-                    .addField('Rank', data.rank)
-                    .addField('Flight Hours', data.totalhours + ' hours')
-                    .addField('Total Flights', data.totalflights + ' flights');
-
-
-                msg.channel.send({embed : embed});
-            } else if(data.discord !== msg.author.username) {
-                msg.channel.sendMessage('@' + msg.author.id + ' maaf, kayaknya username Discord gak cocok sama profil NVirtual-nya. Coba dicek lagi (ㄒoㄒ)')
-            } else if(data == "null") {
-                msg.channel.sendMessage('@' + msg.author.id + ' maaf, datanya gak ada. Coba cek lagi Pilot ID NVirtual-nya (-д-；)')
+            if(data) {
+                if(data.discord == msg.author.username) {
+                    var nickname = 'NVX' + pilotID + ' | ' + data.firstname + ' ' + data.lastname;
+                    
+                    msg.member.setNickname(nickname);
+                    msg.member.addRole('NVX Member');
+    
+                    msg.channel.send('Akun @' + msg.author.id + ' dah diverifikasi ٩(^ᴗ^)۶')
+    
+                    let embed = new Discord.RichEmbed()
+                        .setAuthor(nickname)
+                        .setColor('#FF6600')
+                        .setThumbnail('https://crew.nvirtual.net/lib/avatars/NVX' + pilotID + '.png')
+                        .addField('Rank', data.rank)
+                        .addField('Flight Hours', data.totalhours + ' hours')
+                        .addField('Total Flights', data.totalflights + ' flights');
+    
+    
+                    msg.channel.send({embed : embed});
+                } else {
+                    msg.channel.send('@' + msg.author.id + ' maaf, kayaknya username Discord gak cocok sama profil NVirtual-nya. Coba dicek lagi (ㄒoㄒ)')
+                }
+            } else {
+                msg.channel.send('@' + msg.author.id + ' maaf, datanya gak ada. Coba cek lagi Pilot ID NVirtual-nya (-д-；)')
             }
+            
 
             
 		})
