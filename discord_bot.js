@@ -374,7 +374,7 @@ function checkMessageForCommand(msg, isEdit) {
 							batch = newBatch
 						}
 
-						batch = "Saya aslinya dikembangkan untuk server Discord **NVirtual**\n" + 
+						batch += "\nSaya aslinya dikembangkan untuk server Discord **NVirtual**\n" + 
 						"Mari gabung di https://discord.gg/KxEerbN";
 					}
 					if(batch.length > 0){
