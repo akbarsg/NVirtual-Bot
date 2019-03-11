@@ -374,10 +374,11 @@ function checkMessageForCommand(msg, isEdit) {
 							batch = newBatch
 						}
 
-						batch += "\nSaya aslinya dikembangkan untuk server Discord **NVirtual**\n" + 
-						"Mari gabung di https://discord.gg/KxEerbN";
 					}
 					if(batch.length > 0){
+						batch += "\n\nSaya aslinya dikembangkan untuk server Discord **NVirtual**\n" + 
+						"Mari gabung di https://discord.gg/KxEerbN (つ´∀｀)つ";
+
 						msg.author.send(batch);
 					}
 				});
