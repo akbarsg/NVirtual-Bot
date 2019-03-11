@@ -222,10 +222,10 @@ exports['profile'] = {
                     
                     msg.channel.send({embed : embed});
                 } else {
-                    msg.channel.send('<@' + msg.member.id + '> maaf, datanya gak ada. Coba cek lagi Pilot ID NVirtual-nya (-д-；)')
+                    msg.channel.send('<@' + msg.author.id + '> maaf, datanya gak ada. Coba cek lagi Pilot ID NVirtual-nya (-д-；)')
                 }
             } else {
-                msg.channel.send('<@' + msg.member.id + '> maaf, kayaknya salah ketik. Coba ketik !profile sama NVirtual Pilot ID Anda (＾＾)ｂ. Misalnya: !profile NVX002')
+                msg.channel.send('<@' + msg.author.id + '> maaf, kayaknya salah ketik. Coba ketik !profile sama NVirtual Pilot ID Anda (＾＾)ｂ. Misalnya: !profile NVX002')
             }
             
             

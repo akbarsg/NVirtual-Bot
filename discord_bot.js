@@ -343,7 +343,9 @@ function checkMessageForCommand(msg, isEdit) {
 				}
 				msg.channel.send(info);
 			} else {
-				msg.channel.send("Cek DM, yaa (*^.^*)");
+				if(msg.channel.type !== 'dm'){
+					msg.channel.send("Cek DM, yaa (*^.^*)");
+				}
 				let wew = "__**NVirtual Crew**__ v1.1 (Maret 2019) by <@240261170060197888>\n" + 
 							"Terima kasih dah nyoba manggil saya (≧∀≦)\n" + 
 							"Ini daftar perintah yang bisa dipakai:\n";
@@ -371,6 +373,9 @@ function checkMessageForCommand(msg, isEdit) {
 						} else {
 							batch = newBatch
 						}
+
+						batch = "Saya aslinya dikembangkan untuk server Discord **NVirtual**\n" + 
+						"Mari gabung di https://discord.gg/KxEerbN";
 					}
 					if(batch.length > 0){
 						msg.author.send(batch);
