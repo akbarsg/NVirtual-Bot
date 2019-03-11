@@ -44,10 +44,10 @@ exports['verify'] = {
                             let thumbnail = "http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png";
                             
                             let embed = new Discord.RichEmbed()
-                            .setAuthor(nickname, msg.author.avatarURL)
+                            .setAuthor(nickname, msg.author.avatarURL, "https://crew.nvirtual.net/index.php/profile/view/NVX" + pilotID)
                             .setColor('#FF6600')
                             .setDescription("Profil Akun NVirtual")
-                            .setThumbnail(data.picture)
+                            .setThumbnail(url=data.picture)
                             .addField('Rank', data.rank)
                             .addField('Flight Hours', data.totalhours + ' hours')
                             .addField('Total Flights', data.totalflights + ' flights')
@@ -143,10 +143,10 @@ exports['reactivate'] = {
                                 
                                 let thumbnail = "http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png";
                                 let embed = new Discord.RichEmbed()
-                                .setAuthor(nickname, msg.author.avatarURL)
+                                .setAuthor(nickname, msg.author.avatarURL, "https://crew.nvirtual.net/index.php/profile/view/NVX" + pilotID)
                                 .setColor('#FF6600')
                                 .setDescription("Status Akun NVirtual")
-                                .setThumbnail(data.picture)
+                                .setThumbnail(url=data.picture)
                                 .addField('Status', 'Active')
                                 .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");   
                                 
@@ -211,10 +211,10 @@ exports['profile'] = {
                     var nickname = 'NVX' + pilotID + ' | ' + data.firstname + ' ' + data.lastname;
                     
                     let embed = new Discord.RichEmbed()
-                    .setAuthor(nickname, msg.author.avatarURL)
+                    .setAuthor(nickname, msg.author.avatarURL, "https://crew.nvirtual.net/index.php/profile/view/NVX" + pilotID)
                     .setColor('#FF6600')
                     .setDescription("Profil Akun NVirtual")
-                    .setThumbnail(data.picture)
+                    .setThumbnail(url=data.picture)
                     .addField('Rank', data.rank)
                     .addField('Flight Hours', data.totalhours + ' hours')
                     .addField('Total Flights', data.totalflights + ' flights')
