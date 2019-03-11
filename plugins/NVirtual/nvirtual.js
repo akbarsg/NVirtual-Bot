@@ -9,7 +9,7 @@ exports.commands = [
 
 exports['verify'] = {
     usage: '<Pilot ID>',
-    description: '**Verifikasi akun NVirtual Anda dengan Discord**',
+    description: 'Verifikasi akun NVirtual Anda dengan Discord',
     process: function(bot, msg, suffix) {
         // variable to hold matches
         if(msg.channel.type !== 'dm'){
@@ -85,7 +85,7 @@ exports['verify'] = {
 
 exports['reactivate'] = {
     usage: '<Pilot ID>',
-    description: '**Reaktivasi akun NVirtual Anda**',
+    description: 'Reaktivasi akun NVirtual Anda',
     process: function(bot, msg, suffix) {
         // variable to hold matches
         
@@ -182,7 +182,7 @@ exports['reactivate'] = {
 
 exports['profile'] = {
     usage: '<Pilot ID>',
-    description: '**Lihat profil NVirtual**',
+    description: 'Lihat profil NVirtual',
     process: function(bot, msg, suffix) {
         // variable to hold matches
         

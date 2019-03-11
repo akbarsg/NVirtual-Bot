@@ -350,7 +350,7 @@ function checkMessageForCommand(msg, isEdit) {
 							"Terima kasih dah nyoba manggil saya (≧∀≦)\n" + 
 							"Ini daftar perintah yang bisa dipakai:\n";
 				msg.author.send(wew).then(function(){
-					var batch = "";
+					var batch = "\n";
 					var sortedCommands = Object.keys(commands).sort();
 					for(var i in sortedCommands) {
 						var cmd = sortedCommands[i];
