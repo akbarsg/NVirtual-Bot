@@ -142,11 +142,19 @@ commands = {
 	//     bot.user.setStatus("online").then(console.log).catch(console.error);
 	// }
     // },
-    // "say": {
-    //     usage: "<message>",
-    //     description: "bot says message",
-    //     process: function(bot,msg,suffix){ msg.channel.send(suffix);}
-    // },
+    "say": {
+        usage: "<message>",
+        description: "bot says message",
+        process: function(bot,msg,suffix){ 
+			// msg.channel.send(suffix);
+			let embed = new Discord.RichEmbed()
+                    .setAuthor('NVirtual Discord Server', 'https://nvirtual.net/img/bulet-64.png')
+                    .setColor('#FF6600')
+                    .setDescription(suffix);
+                    
+                    msg.channel.send({embed : embed});
+		}
+    },
 	// "announce": {
     //     usage: "<message>",
     //     description: "bot says message with text to speech",
