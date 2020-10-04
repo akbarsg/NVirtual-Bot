@@ -277,14 +277,14 @@ bot.on("ready", function () {
 	bot.user.setPresence({
 		game: {
 			// name: Config.commandPrefix+"help | " + bot.guilds.array().length +" Servers"
-			name: "XPlane 12 | " + Config.commandPrefix+"help"
+			name: "MSFS | " + Config.commandPrefix+"help"
 		}
 	}); 
 });
 
 bot.on("guildMemberAdd", function () {
 	// Send the message to a designated channel on a server:
-	const channel = member.guild.channels.find(ch => ch.name === 'announcement');
+	const channel = member.guild.channels.find(ch => ch.name === 'announcements');
 	// Do nothing if the channel wasn't found on this server
 	if (!channel) return;
 	// Send the message, mentioning the member
@@ -346,8 +346,8 @@ function checkMessageForCommand(msg, isEdit) {
 				if(msg.channel.type !== 'dm'){
 					msg.channel.send("Cek DM, yaa (*^.^*)");
 				}
-				let wew = "__**NVirtual Crew**__ v1.1 (Maret 2019) by <@240261170060197888>\n" + 
-							"Terima kasih dah nyoba manggil saya (≧∀≦)\n" + 
+				let wew = "__**NVirtual Crew**__ v1.2 (October 2020) by <@240261170060197888>\n" + 
+							"Terima kasih dah nyoba manggil saya!\n" + 
 							"Ini daftar perintah yang bisa dipakai:\n";
 				msg.author.send(wew).then(function(){
 					var batch = "\n";

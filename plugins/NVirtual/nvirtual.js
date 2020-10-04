@@ -7,6 +7,13 @@ exports.commands = [
     "profile"
 ];
 
+var auth = {
+    'auth': {
+      'user': process.env.NVX_ID,
+      'pass': process.env.NVX_PASS
+    }
+  };
+
 exports['verify'] = {
     usage: '<Pilot ID>',
     description: 'Verifikasi akun NVirtual Anda dengan Discord',
@@ -24,7 +31,7 @@ exports['verify'] = {
             var pilotID = pilotID.replace(/\D/g,'');
             var restString = 'https://crew.nvirtual.net/index.php/api/discord/' + pilotID ;
             var data;
-            rp(restString)
+            rp(restString, auth)
             .then(function(response) {
                 if (suffix) {
                     data = JSON.parse(response);
@@ -84,7 +91,7 @@ exports['verify'] = {
 }
 
 exports['reactivate'] = {
-    usage: '<Pilot ID>',
+    // usage: '<Pilot ID>',$data = PilotData::getPilotData($args[0]);
     description: 'Reaktivasi akun NVirtual Anda',
     process: function(bot, msg, suffix) {
         // variable to hold matches
@@ -98,7 +105,7 @@ exports['reactivate'] = {
         // var pilotID = pilotID.replace(/\D/g,'');
         var restString = process.env.PILOTS_API ;
         var data;
-        rp(restString)
+        rp(restString, auth)
         .then(function(response) {
             
             data = JSON.parse(response);
@@ -126,7 +133,7 @@ exports['reactivate'] = {
                     
                     var reactivationString = process.env.REACTIVATION_API + pilotID ;
                     
-                    rp(reactivationString)
+                    rp(reactivationString, auth)
                     .then(function(response2) {
                         
                         data2 = JSON.parse(response2);
@@ -148,7 +155,7 @@ exports['reactivate'] = {
                                 .setDescription("Status Akun NVirtual")
                                 .setThumbnail(url=data.picture)
                                 .addField('Status', 'Active')
-                                .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");   
+                                .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");
                                 
                                 msg.channel.send({embed : embed});
                                 
@@ -196,7 +203,7 @@ exports['profile'] = {
         var pilotID = pilotID.replace(/\D/g,'');
         var restString = process.env.PILOTS_API + '/' + pilotID ;
         var data;
-        rp(restString)
+        rp(restString, auth)
         .then(function(response) {
             if (suffix) {
                 data = JSON.parse(response);
