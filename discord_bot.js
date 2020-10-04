@@ -156,7 +156,7 @@ commands = {
 			let embed = new Discord.RichEmbed()
                     .setAuthor('NVirtual Discord server', 'https://nvirtual.net/img/bulet-64.png')
                     .setColor('#FF6600')
-                    .setDescription('!say To gain full access to the the server, you have to verify your membership by typing `!verify ` followed by your NVirtual Pilot ID (e.g. `!verify NVX002`) in #crew-bot-commands channel. And then, follow instructions from @NVirtual Crew#8680.');
+                    .setDescription('To gain full access to the the server, you have to verify your membership by typing `!verify ` followed by your NVirtual Pilot ID (e.g. `!verify NVX002`) in #crew-bot-commands channel. And then, follow instructions from @NVirtual Crew#8680.');
                     
                     msg.channel.send({embed : embed});
 		}
