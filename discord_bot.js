@@ -142,25 +142,25 @@ commands = {
 	//     bot.user.setStatus("online").then(console.log).catch(console.error);
 	// }
     // },
-    "say": {
-        usage: "<message>",
-        description: "bot says message",
-        process: function(bot,msg,suffix){ 
-			// msg.channel.send(suffix);
-			let embed2 = new Discord.RichEmbed()
-                    .setTitle('Welcome to NVirtual Discord server')
-                    .setColor('#FF6600')
-                    .setDescription('In this server, you can have a chat with fellow NVirtual pilots and get support from our staff members.');
+    // "say": {
+    //     usage: "<message>",
+    //     description: "bot says message",
+    //     process: function(bot,msg,suffix){ 
+	// 		// msg.channel.send(suffix);
+	// 		let embed2 = new Discord.RichEmbed()
+    //                 .setTitle('Welcome to NVirtual Discord server')
+    //                 .setColor('#FF6600')
+    //                 .setDescription('In this server, you can have a chat with fellow NVirtual pilots and get support from our staff members.');
                     
-                    msg.channel.send({embed : embed2});
-			let embed = new Discord.RichEmbed()
-                    .setAuthor('NVirtual Discord server', 'https://nvirtual.net/img/bulet-64.png')
-                    .setColor('#FF6600')
-                    .setDescription('To gain full access to the the server, you have to verify your membership by typing `!verify ` followed by your NVirtual Pilot ID (e.g. `!verify NVX002`) in #crew-bot-commands channel. And then, follow instructions from @NVirtual Crew#8680.');
+    //                 msg.channel.send({embed : embed2});
+	// 		let embed = new Discord.RichEmbed()
+    //                 .setAuthor('NVirtual Discord server', 'https://nvirtual.net/img/bulet-64.png')
+    //                 .setColor('#FF6600')
+    //                 .setDescription('To gain full access to the the server, you have to verify your membership by typing `!verify ` followed by your NVirtual Pilot ID (e.g. `!verify NVX002`) in #crew-bot-commands channel. And then, follow instructions from @NVirtual Crew#8680.');
                     
-                    msg.channel.send({embed : embed});
-		}
-    },
+    //                 msg.channel.send({embed : embed});
+	// 	}
+    // },
 	// "announce": {
     //     usage: "<message>",
     //     description: "bot says message with text to speech",
