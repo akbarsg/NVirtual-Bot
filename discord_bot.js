@@ -147,12 +147,12 @@ commands = {
         description: "bot says message",
         process: function(bot,msg,suffix){ 
 			// msg.channel.send(suffix);
-			let embed = new Discord.RichEmbed()
+			let embed2 = new Discord.RichEmbed()
                     .setTitle('Welcome to NVirtual Discord server')
                     .setColor('#FF6600')
                     .setDescription('In this server, you can have a chat with fellow NVirtual pilots and get support from our staff members.');
                     
-                    msg.channel.send({embed : embed});
+                    msg.channel.send({embed : embed2});
 			let embed = new Discord.RichEmbed()
                     .setAuthor('NVirtual Discord server', 'https://nvirtual.net/img/bulet-64.png')
                     .setColor('#FF6600')
