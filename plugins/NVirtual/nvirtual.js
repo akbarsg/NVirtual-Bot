@@ -54,20 +54,20 @@ exports['verify'] = {
                             .setAuthor(nickname, msg.author.avatarURL, "https://crew.nvirtual.net/index.php/profile/view/NVX" + pilotID)
                             .setColor('#FF6600')
                             .setDescription("Profil Akun NVirtual")
-                            .setThumbnail(data.picture)
+                            .setThumbnail("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png")
                             .addField('Rank', data.rank)
                             .addField('Flight Hours', data.totalhours + ' hours')
                             .addField('Total Flights', data.totalflights + ' flights')
                             .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");
                             
                             console.log("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png");
+                            msg.channel.send({embed : embed});
                             
                             if (!msg.member.roles.cache.find("name", "Staff NVX")){
                                 msg.member.setNickname(nickname);
-                                msg.member.addRole(process.env.ROLE_ID);
+                                msg.member.roles.add(process.env.ROLE_ID);
                             }                    
                             
-                            msg.channel.send({embed : embed});
                         } else {
                             msg.channel.send('<@' + msg.author.id + '> maaf, kayaknya username Discord gak cocok sama profil NVirtual-nya. Masukkan Discord Username (tanpa tag) di https://crew.nvirtual.net/index.php/profile/editprofile')
                         }
@@ -153,7 +153,7 @@ exports['reactivate'] = {
                                 .setAuthor(nickname, msg.author.avatarURL, "https://crew.nvirtual.net/index.php/profile/view/NVX" + pilotID)
                                 .setColor('#FF6600')
                                 .setDescription("Status Akun NVirtual")
-                                .setThumbnail(data2.picture)
+                                .setThumbnail("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png")
                                 .addField('Status', 'Active')
                                 .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");
                                 
