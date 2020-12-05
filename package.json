@@ -23,7 +23,7 @@
     "leet": "^1.3.0",
     "nock": "1.7.x",
     "node-wolfram": "0.0.1",
-    "npm": "",
+    "npm": "^6.14.8",
     "querystring": "0.2.x",
     "request": "^2.85.0",
     "request-promise": "^4.2.1",
