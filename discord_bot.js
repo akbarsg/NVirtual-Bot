@@ -285,7 +285,8 @@ var hooks = {
 }
 
 bot.on("ready", function () {
-	console.log("Logged in! Serving in " + bot.guilds.array().length + " servers");
+	// console.log("Logged in! Serving in " + bot.guilds.array().length + " servers");
+	console.log("Logged in!");
 	require("./plugins.js").init(hooks);
 	console.log("type "+Config.commandPrefix+"help in Discord for a commands list.");
 	bot.user.setPresence({
