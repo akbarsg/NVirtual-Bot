@@ -54,7 +54,7 @@ exports['verify'] = {
                             .setAuthor(nickname, msg.author.avatarURL, "https://crew.nvirtual.net/index.php/profile/view/NVX" + pilotID)
                             .setColor('#FF6600')
                             .setDescription("Profil Akun NVirtual")
-                            .setThumbnail(url=data.picture)
+                            .setThumbnail(data.picture)
                             .addField('Rank', data.rank)
                             .addField('Flight Hours', data.totalhours + ' hours')
                             .addField('Total Flights', data.totalflights + ' flights')
@@ -62,9 +62,9 @@ exports['verify'] = {
                             
                             console.log("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png");
                             
-                            if (!msg.author.roles.find("name", "Staff NVX")){
-                                msg.author.setNickname(nickname);
-                                msg.author.addRole(process.env.ROLE_ID);
+                            if (!msg.member.roles.cache.find("name", "Staff NVX")){
+                                msg.member.setNickname(nickname);
+                                msg.member.addRole(process.env.ROLE_ID);
                             }                    
                             
                             msg.channel.send({embed : embed});
@@ -149,11 +149,11 @@ exports['reactivate'] = {
                                 }
                                 
                                 let thumbnail = "http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png";
-                                let embed = new Discord.RichEmbed()
+                                let embed = new Discord.MessageEmbed()
                                 .setAuthor(nickname, msg.author.avatarURL, "https://crew.nvirtual.net/index.php/profile/view/NVX" + pilotID)
                                 .setColor('#FF6600')
                                 .setDescription("Status Akun NVirtual")
-                                .setThumbnail(url=data.picture)
+                                .setThumbnail(data2.picture)
                                 .addField('Status', 'Active')
                                 .setFooter("NVirtual Crew", "https://nvirtual.net/img/bulet-64.png");
                                 
