@@ -1,0 +1,6 @@
+{
+    "hotspatch": {
+        "description" : "gets the latest patch notes for Heroes of the Storm from blizzpro",
+        "url" : "http://heroesofthestorm.blizzpro.com/tag/patch-notes/feed/"
+    }
+}

@@ -28,7 +28,7 @@ node_modules
 
 #config files
 auth.json
-rss.json
+# rss.json
 alias.json
 permissions.json
 messagebox.json
