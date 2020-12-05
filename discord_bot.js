@@ -285,9 +285,8 @@ var hooks = {
 }
 
 bot.on("ready", function () {
-	// console.log("Logged in! Serving in " + bot.guilds.array().length + " servers");
-	console.log("Logged in!");
 	require("./plugins.js").init(hooks);
+	console.log("Logged in! Currently serving " + bot.guilds.cache.array().length + " servers.");
 	console.log("type "+Config.commandPrefix+"help in Discord for a commands list.");
 	bot.user.setPresence({
 		game: {
@@ -319,7 +318,7 @@ function checkMessageForCommand(msg, isEdit) {
         console.log("treating " + msg.content + " from " + msg.author + " as command");
 		var cmdTxt = msg.content.split(" ")[0].substring(Config.commandPrefix.length);
         var suffix = msg.content.substring(cmdTxt.length+Config.commandPrefix.length+1);//add one for the ! and one for the space
-        if(msg.isMentioned(bot.user)){
+        if(msg.mentions.has(bot.user)){
 			try {
 				cmdTxt = msg.content.split(" ")[1];
 				suffix = msg.content.substring(bot.user.mention().length+cmdTxt.length+Config.commandPrefix.length+1);
@@ -430,7 +429,7 @@ function checkMessageForCommand(msg, isEdit) {
             return true; //returning true to prevent feedback from commands
         }
 
-        if (msg.author != bot.user && msg.isMentioned(bot.user)) {
+        if (msg.author != bot.user && msg.mentions.has(bot.user)) {
                 //msg.channel.send("yes?"); //using a mention here can lead to looping
         } else {
 
