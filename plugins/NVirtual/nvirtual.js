@@ -50,7 +50,7 @@ exports['verify'] = {
                             
                             let thumbnail = "http://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png";
                             
-                            let embed = new Discord.RichEmbed()
+                            let embed = new Discord.MessageEmbed()
                             .setAuthor(nickname, msg.author.avatarURL, "https://crew.nvirtual.net/index.php/profile/view/NVX" + pilotID)
                             .setColor('#FF6600')
                             .setDescription("Profil Akun NVirtual")
