@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/chalda/DiscordBot.git"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "license": "GPL-2.0",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
