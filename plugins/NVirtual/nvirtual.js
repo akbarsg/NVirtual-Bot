@@ -63,7 +63,7 @@ exports['verify'] = {
                             console.log("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png");
                             msg.channel.send({embed : embed});
                             
-                            if (!msg.member.roles.cache.find("name", "Staff NVX")){
+                            if (!msg.member.roles.cache.find(r => r.name === "Staff NVX")){
                                 msg.member.setNickname(nickname);
                                 msg.member.roles.add(process.env.ROLE_ID);
                             }                    
