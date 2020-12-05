@@ -62,20 +62,20 @@ exports['verify'] = {
                             
                             console.log("https://crew.nvirtual.net/lib/avatars/NVX" + pilotID + ".png");
                             
-                            if (!msg.member.roles.find("name", "Staff NVX")){
-                                msg.member.setNickname(nickname);
-                                msg.member.addRole(process.env.ROLE_ID);
+                            if (!msg.author.roles.find("name", "Staff NVX")){
+                                msg.author.setNickname(nickname);
+                                msg.author.addRole(process.env.ROLE_ID);
                             }                    
                             
                             msg.channel.send({embed : embed});
                         } else {
-                            msg.channel.send('<@' + msg.member.id + '> maaf, kayaknya username Discord gak cocok sama profil NVirtual-nya. Coba cek Discord Username Anda di https://crew.nvirtual.net/index.php/profile/editprofile d(>_・ )')
+                            msg.channel.send('<@' + msg.author.id + '> maaf, kayaknya username Discord gak cocok sama profil NVirtual-nya. Masukkan Discord Username (tanpa tag) di https://crew.nvirtual.net/index.php/profile/editprofile')
                         }
                     } else {
-                        msg.channel.send('<@' + msg.member.id + '> maaf, datanya gak ada. Coba cek lagi Pilot ID NVirtual-nya (-д-；)')
+                        msg.channel.send('<@' + msg.author.id + '> maaf, datanya gak ada. Coba cek lagi Pilot ID NVirtual-nya (-д-；)')
                     }
                 } else {
-                    msg.channel.send('<@' + msg.member.id + '> maaf, kayaknya salah ketik. Coba ketik !verify sama NVirtual Pilot ID Anda (＾＾)ｂ. Misalnya: !verify NVX002')
+                    msg.channel.send('<@' + msg.author.id + '> maaf, kayaknya salah ketik. Coba ketik !verify sama NVirtual Pilot ID Anda (＾＾)ｂ. Misalnya: !verify NVX002')
                 }
                 
                 
